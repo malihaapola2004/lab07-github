@@ -1,0 +1,43 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package library;
+
+
+
+import java.util.ArrayList;
+
+public class Library {
+
+    String libraryname;
+    ArrayList<Book> books = new ArrayList<>();
+
+    Library(String name) {
+        libraryname = name;
+    }
+
+    void addBook(Book book) {
+        books.add(book);
+    }
+
+    void removeBook(String ISBN){
+        for(int i = 0; i < books.size(); i++) {
+
+            if(books.get(i).getIsbn().equals(ISBN)) {
+                books.remove(i);
+                System.out.println("Book removed");
+                return;
+            }
+        }
+
+        System.out.println("Book not found");
+    }
+
+    void displayAllBooks() {
+
+        for(Book b : books) {
+            System.out.println(b.getBookdetails());
+        }
+    }
+}

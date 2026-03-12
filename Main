@@ -1,0 +1,54 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package library;
+import java.util.Scanner;
+public class Main {
+   public static void main (String[]args){
+      Scanner scan = new Scanner(System.in) ;
+      Library lib = new Library();
+      while(true){
+          System.out.print("1. Add book");
+          System.out.print("2. Remove book");
+          System.out.print("3. Display book");
+          System.out.print("Exit");
+          
+          int choice = scan.nextInt();
+          scan.nextLine();
+          if (choice==1){
+              System.out.print("title");
+              String title= scan.nextLine();
+              System.out.print("author");
+              String author=scan.nextLine();
+              System.out.print("ISBN");
+              String ISBN = scan.nextLine();
+          Book b = new Book(title,author,ISBN);
+          lib.addBook(b);
+          }
+            else if(choice == 2) {
+
+                System.out.print("Enter ISBN: ");
+                String isbn = scan.nextLine();
+
+                lib.removeBook(isbn);
+            }
+
+            else if(choice == 3) {
+
+                lib.displayAllBooks();
+            }
+
+            else if(choice == 4) {
+
+                System.out.println("Program End");
+                break;
+            }
+      }
+       
+       
+       
+       
+       
+   }
+}

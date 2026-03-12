@@ -1,0 +1,31 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package library;
+
+/**
+ *
+ * @author User
+ */
+public class Book {
+    String title;
+    String author;
+    String ISBN;
+    Book(String title,String author,String ISBN){
+        
+        this. title=title;
+        this.author =author;
+        this.ISBN= ISBN;
+    }
+    public String getIsbn() {
+        return ISBN;
+    }
+   String getBookdetails() {
+       
+       return "title" + title +
+               "author" + author +
+               "ISBN" + ISBN ;
+       
+   }
+}
